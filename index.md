@@ -12,12 +12,28 @@ layout: default
 <dd>07/2024</dd>
 <dt>College:</dt>
 <a href="http://ensao.ump.ma"> Ecole Nationale des Sciences Appliquées d'Oujda</a>
-
-</dl>
+<dt>Project's report:</dt>
 <a href="https://hrfess.github.io/projects/webRepportBinaryExp.htm">HTML format</a>
-
+</dl>
+* * *
 
 * * *
+# Integrating Watchguard Firebox Firewall with Wazuh Server And Use Case Implementation
+## Creating custom decoders and rules for watchguard logs, FIM module and Active response module.
+## Developing script for automatic incident response
+<dl>
+<dt>Type:</dt>
+<dd>Internship</dd>
+<dt>Date:</dt>
+<dd>08/2024</dd>
+<dt>Company:</dt>
+<a href="https://hisneo.com">HISNEO</a>
+<dt>Project's report:</dt>
+<a href="#">HTML format</a>
+</dl>
+* * * 
+
+
 {% comment %}
 There should be whitespace between paragraphs.
 
