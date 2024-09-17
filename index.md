@@ -2,23 +2,22 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
-***
+* * *
 # Binary Exploitation Technics, Evasion and Mitigation
 ## Understanding and statically patching stack based buffer-overflow caused by strcpy() standard function
 <dl>
-<dt>Type</dt>
+<dt>Type:</dt>
 <dd>Academic project</dd>
-<dt>Date</dt>
+<dt>Date:</dt>
 <dd>07/2024</dd>
-<dt>College</dt>
-<dd>[École Nationale des Sciences Appliquées d'Oujda](http://ensao.ump.ma/)</dd>
+<dt>College:</dt>
+[École Nationale des Sciences Appliquées d'Oujda](http://ensao.ump.ma/)
 
 </dl>
 [Project's report in html format](./webRepportBinaryExp.htm).
 
-***
-
+* * *
+{% comment %}
 There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
@@ -134,3 +133,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+{% endcomment %}
