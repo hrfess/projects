@@ -19,8 +19,8 @@ layout: default
 
 * * *
 # Integrating Watchguard Firebox Firewall with Wazuh Server And Use Case Implementation
-## Creating custom decoders and rules for watchguard logs, FIM module and Active response module.
-## Developing script for automatic incident response
+*   Creating custom decoders and rules for watchguard logs, FIM module and Active response module.
+*   Developing script for automatic incident response
 <dl>
 <dt>Type:</dt>
 <dd>Internship</dd>
