@@ -16,6 +16,7 @@ Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 </dl>
 [Project's report in html format](./webRepportBinaryExp.htm).
+
 ***
 
 There should be whitespace between paragraphs.
