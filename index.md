@@ -1,10 +1,22 @@
-{%---
+---
 layout: default
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
+***
+#Binary Exploitation Technics, Evasion and Mitigation
+##Understanding and statically patching stack based buffer-overflow caused by strcpy() standard function
+<dl>
+<dt>Type</dt>
+<dd>Academic project</dd>
+<dt>Date</dt>
+<dd>07/2024</dd>
+<dt>College</dt>
+<dd>[École Nationale des Sciences Appliquées d'Oujda](http://ensao.ump.ma/)</dd>
 
-[Link to another page](./another-page.html).
+</dl>
+[Project's report in html format](./webRepportBinaryExp.htm).
+***
 
 There should be whitespace between paragraphs.
 
@@ -100,7 +112,7 @@ end
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
-%}
+
 ### Definition lists can be used with HTML syntax.
 
 <dl>
