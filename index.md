@@ -11,10 +11,11 @@ layout: default
 <dt>Date:</dt>
 <dd>07/2024</dd>
 <dt>College:</dt>
-[École Nationale des Sciences Appliquées d'Oujda](http://ensao.ump.ma/)
+<a href="http://ensao.ump.ma"> Ecole Nationale des Sciences Appliquées d'Oujda</a>
 
 </dl>
-[Project's report in html format](./webRepportBinaryExp.htm).
+<a href="https://hrfess.github.io/projects/webRepportBinaryExp.htm">HTML format</a>
+
 
 * * *
 {% comment %}
