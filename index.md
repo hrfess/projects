@@ -4,8 +4,8 @@ layout: default
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 ***
-#Binary Exploitation Technics, Evasion and Mitigation
-##Understanding and statically patching stack based buffer-overflow caused by strcpy() standard function
+# Binary Exploitation Technics, Evasion and Mitigation
+## Understanding and statically patching stack based buffer-overflow caused by strcpy() standard function
 <dl>
 <dt>Type</dt>
 <dd>Academic project</dd>
