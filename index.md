@@ -29,7 +29,7 @@ layout: default
 <dt>Company:</dt>
 <a href="https://hisneo.com">HISNEO</a>
 <dt>Project's report:</dt>
-<a href="#">HTML format</a>
+<a href="https://hrfess.github.io/projects/rapport.pdf">PDF format</a>
 </dl>
 * * * 
 
