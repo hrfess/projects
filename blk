@@ -1,0 +1,63 @@
+import smtplib
+import ssl
+import pandas as pd
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
+
+# Configuration
+smtp_server = "smtp.gmail.com"
+port = 465
+sender_email = "your_email@gmail.com"
+app_password = "your_app_password"  # Use the app password if 2FA is enabled
+
+# Load recipient details from the CSV
+emails = pd.read_csv('emails.csv')
+
+# Compose Email
+subject = "Your Subject Here"
+body_template = """\
+Dear [Recipient's Name],
+
+[Dynamic Field]
+
+Best regards,
+Your Name
+"""
+
+# Setup SSL context
+context = ssl.create_default_context()
+
+# Send Emails
+try:
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        server.login(sender_email, app_password)
+        
+        for index, row in emails.iterrows():
+            recipient = row['email']
+            pdf_filename = row['pdf_file']
+            dynamic_text = row['dynamic_field']
+            
+            # Create a new email for each recipient
+            msg = MIMEMultipart()
+            msg["From"] = sender_email
+            msg["To"] = recipient
+            msg["Subject"] = subject
+            
+            # Customize the body with the dynamic field
+            personalized_body = body_template.replace("[Recipient's Name]", recipient.split('@')[0])
+            personalized_body = personalized_body.replace("[Dynamic Field]", dynamic_text)
+            msg.attach(MIMEText(personalized_body, "plain"))
+            
+            # Attach PDF file
+            with open(pdf_filename, "rb") as pdf_file:
+                pdf_attachment = MIMEApplication(pdf_file.read(), _subtype="pdf")
+                pdf_attachment.add_header('Content-Disposition', 'attachment', filename=pdf_filename)
+                msg.attach(pdf_attachment)
+            
+            # Send the email
+            server.sendmail(sender_email, recipient, msg.as_string())
+            print(f"Email with attachment sent to {recipient}")
+            
+except Exception as e:
+    print(f"An error occurred: {e}")
