@@ -14,6 +14,8 @@ layout: default
 <a href="http://ensao.ump.ma"> Ecole Nationale des Sciences Appliquées d'Oujda</a>
 <dt>Project's report:</dt>
 <a href="https://hrfess.github.io/projects/webRepportBinaryExp.htm">HTML format</a>
+<a href="https://hrfess.github.io/projects/rapport1.pdf">PDF format</a>
+
 </dl>
 * * *
 
