@@ -35,6 +35,24 @@ layout: default
 </dl>
 * * * 
 
+* * *
+# Implementing a simple CNN model for “cat versus dog” classification task
+
+*  This project implements a simple CNN model using Keras framework. Using only three epochs
+on a dataset of 25 000 pictures, we achieved 73 percent validation accuracy rate. The model
+was able to distinguish correctly between dogs and cats in the "cat versus dog" classification
+task when used in a testing phase, which may indicate a generalized learning.
+<dl>
+<dt>Type:</dt>
+<dd>Class project</dd>
+<dt>Date:</dt>
+<dd>12/2024</dd>
+<dt>College:</dt>
+<a href="http://ensao.ump.ma/">ENSAO</a>
+<dt>Project's report:</dt>
+<a href="https://hrfess.github.io/projects/rapportML.pdf">PDF format</a>
+</dl>
+* * * 
 
 {% comment %}
 There should be whitespace between paragraphs.
