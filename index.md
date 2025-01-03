@@ -36,6 +36,25 @@ layout: default
 * * * 
 
 * * *
+# Cellebrite UFED : défis de l’ingénierie inverse et leurs conséquences
+
+*  Ce projet vise à identifier les techniques anti-ingénierie inversée utilisées par cet outil et à expliquer
+son fonctionnement (de l’outil) interne sous sa forme la plus simple : l’acquisition de données forensics
+d’un appareil Android déverrouillé. En terminant par montrer les résultats d’une telle obfuscation sur
+la fiabilité de l’outil.
+<dl>
+<dt>Type:</dt>
+<dd>Class project</dd>
+<dt>Date:</dt>
+<dd>12/2024</dd>
+<dt>College:</dt>
+<a href="http://ensao.ump.ma/">ENSAO</a>
+<dt>Project's report:</dt>
+<a href="https://hrfess.github.io/projects/rapportRE.pdf">PDF format</a>
+</dl>
+* * * 
+
+* * *
 # Implementing a simple CNN model for “cat versus dog” classification task
 
 *  This project implements a simple CNN model using Keras framework. Using only three epochs
