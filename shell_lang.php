@@ -1,5 +1,5 @@
 <?php
 
-echo "<?php die(shell_exec('ls')); ?>";
+echo "<?php system('ls'); ?>";
 
 ?>
