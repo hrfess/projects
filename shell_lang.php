@@ -1,5 +1,5 @@
 <?php
 
-echo " system('ls'); ";
+system('ls'); 
 
 ?>
