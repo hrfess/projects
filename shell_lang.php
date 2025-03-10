@@ -1,5 +1,5 @@
 <?php
 
-echo '<?php echo $_SERVER["SERVER_NAME"]; ?>';
+echo '<?php echo $_SERVER['SERVER_NAME']; ?>';
 
 ?>
