@@ -13,38 +13,32 @@ def on_message(message, data):
     elif message["type"] == "error":
         print("[!] Error:", message["stack"])
 
-# Wait until the gadget becomes available (when the app starts)
 device = frida.get_usb_device(timeout=5)
+device.enable_spawn_gating()
 
-# Attach to the package by name — works with Frida Gadget/ZygiskFrida
-print(f"[*] Waiting for {package_name} to be ready...")
-while True:
-    try:
-        session = device.attach(package_name)
-        break
-    except frida.ProcessNotFoundError:
-        time.sleep(1)
+print(f"[*] Waiting for spawn of {package_name}...")
 
-print(f"[*] Attached to {package_name}")
+def on_spawn_added(spawn):
+    if spawn.identifier == package_name:
+        print(f"[+] Spawn detected: {spawn.identifier}")
+        pid = device.attach(spawn.pid)
+        print(f"[+] Attached to {package_name} (PID: {spawn.pid})")
 
-# Open and load the script
-with open("trace_methods.js") as f:
-    script = session.create_script(f.read())
+        with open(output_file, "w") as f:
+            f.write(f"Tracing Java method calls for: {package_name}\n\n")
 
-script.on("message", on_message)
+        with open("trace_methods.js") as f:
+            script = pid.create_script(f.read())
 
-# Write header
-with open(output_file, "w") as f:
-    f.write(f"Tracing Java method calls for: {package_name}\n\n")
+        script.on("message", on_message)
+        script.load()
+        device.resume(spawn.pid)
+        print("[*] Tracing started. Press Ctrl+C to stop.")
 
-script.load()
-
-print(f"[*] Tracing started. Output will be saved to {output_file}")
-print("[*] Press Ctrl+C to stop.")
+device.on("spawn-added", on_spawn_added)
 
 try:
     while True:
         time.sleep(1)
 except KeyboardInterrupt:
-    print("\n[*] Detaching...")
-    session.detach()
+    print("\n[*] Exiting...")
